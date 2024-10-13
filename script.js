@@ -242,6 +242,11 @@ Array.prototype.forEach.call(buttons, function (button) {
   });
 });
 
+function naturalLog() {
+  display.value = Math.log(display.value);
+  resultDisplayed = true;
+  manageLocalStorage(display.value);
+}
 // Prevents multiple decimal points from being typed through keyboard
 function isNumber(num) {
   if (num === "." && decimalPointOkay()) {
@@ -290,7 +295,14 @@ document.addEventListener("keydown", (e) => {
       pressedButton.classList.remove("highlighted");
     }, 200);
   }
-
+  else if (trimmedButtonValue === "ln") {
+    naturalLog();
+  }
+  
+  // Add a key event listener for the "ln" button
+  if (e.key === "l") {
+    naturalLog();
+  }
   // Check if the currently pressed key is number
   if (isNumber(e.key)) {
     if (display.value == 0 && e.key != "." && !display.value.includes("."))
