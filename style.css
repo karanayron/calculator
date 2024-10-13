@@ -481,3 +481,8 @@ a 2g phone :) */
 .heading {
 	color: var(--primary-heading-color);
 }
+.functions-one button[data-text="ln"],
+.functions-two button[data-text="ln"] {
+  background-color: #80d4ff;
+  box-shadow: 2px 2px 60px var(--primary-number-shadow);
+}
